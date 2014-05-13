@@ -1,7 +1,5 @@
 #first we print the list of students
 
-student_count = 19 # set variable to number of students
-
 #Array
 students = ["Nadav Matalon",
 "Fitsum Teklehaimanot",
@@ -22,14 +20,26 @@ students = ["Nadav Matalon",
 "Josh Fail-Brown",
 "Sasha Cooper",
 "Nicolai DTH"]
-puts "The students of my cohort at Makers Academy"
-puts"---------------------------------------------"
 
-#iterating through the array students and printing each student
-students.each do |student|
-	puts student
+#method to print header
+def print_header
+	puts "The students of my cohort at Makers Academy"
+	puts"---------------------------------------------"
 end
 
+#method to print names
+def print(names)
+	names.each do |name|
+		puts name
+	end
+end
 
-#finally, we print th total, we call the variable by #{variable}
-puts "Overall, we have #{students.length} students."
+#method to print the footer
+def print_footer(names)
+	puts "Overall, we have #{names.length} students."
+end
+
+print_header
+print(students)
+print_footer(students)
+
