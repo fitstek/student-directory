@@ -1,4 +1,6 @@
 #first we print the list of students
+
+student_count = 19 # set variable to number of students
 puts "The students of my cohort at Makers Academy"
 puts"---------------------------------------------"
 puts"Nadav Matalon"
@@ -21,7 +23,5 @@ puts"Josh Fail-Brown"
 puts"Sasha Cooper"
 puts"Nicolai DTH"
 
-#finally, we print th total
-print "Overall, we have "
-print 19 #it's important the print() doesn't add a new line character.
-puts " students."
+#finally, we print th total, we call the variable by #{variable}
+puts "Overall, we have #{student_count} students."
