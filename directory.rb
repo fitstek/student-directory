@@ -19,3 +19,7 @@ puts"Faezrah Rizalman"
 puts"Josh Fail-Brown"
 puts"Sasha Cooper"
 puts"Nicolai DTH"
+
+print "Overall, we have "
+print 19
+puts " students."
