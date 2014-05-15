@@ -23,7 +23,9 @@ def process(selection)
 			when "2"
 				show_students
 			when "3"
-				save_students						
+				save_students
+			when "4"
+				load_file						
 			when "9"
 				exit
 			else
@@ -91,6 +93,7 @@ end
 
 #method to print the footer
 def print_footer
+	puts ""
 	print "Overall, we have #{@students.length} student"
 	if @students.length !=1  
 		puts "s." 
@@ -103,6 +106,7 @@ def print_menu
 	puts "1. Input the students"
 	puts "2. Show the students"
 	puts "3. Save the list to students.csv"
+	puts "4. Load saved students.csv"
 	puts "9. Exit"
 end
 
@@ -133,6 +137,17 @@ def save_students
 	end
 	file.close
 end
+
+def load_file
+
+	file = File.open("students.csv", "r") 
+	file.readlines.each do |line|
+		@name, @cohort = line.chomp.split(',')
+		@students << {:name => @name, :cohort => @cohort}
+	end
+	file.close
+end
+
 	
 #load the menu first
 interactive_menu
