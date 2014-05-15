@@ -21,9 +21,10 @@ def process(selection)
 			when "1"
 				input_students
 			when "2"
-				show_students			
+				show_students
+			when "3"
+				save_students						
 			when "9"
-				save_students
 				exit
 			else
 				puts "I don't know what you meant, try again"		
@@ -56,10 +57,13 @@ end
 def get_information
 
 	#get the first name
-	puts "Please enter the names of the students."
+	puts "\nPlease enter the names of the student."
 	puts "To finish, just hit return twice"
 	@name = gets.chomp
 
+	if @name.empty?
+		interactive_menu
+	end
 	# read in cohort name
 	puts "Please enter cohort name"
 	@cohort = gets.chomp
@@ -80,7 +84,8 @@ end
 #method to print names by iterating over the array
 def print_students
 	@students.each do |student|
-		puts "#{student[ :name]} (#{student[:cohort]} cohort)"
+	puts "#{student[ :name]} (#{student[:cohort]} cohort)"
+		
 	end
 end
 
@@ -97,6 +102,7 @@ end
 def print_menu
 	puts "1. Input the students"
 	puts "2. Show the students"
+	puts "3. Save the list to students.csv"
 	puts "9. Exit"
 end
 
