@@ -41,8 +41,11 @@ def input_students
 		@students << {:name => @name, :cohort => @cohort}
 
 		#print out number of students
-		puts "Now we have #{@students.length} students"
-		
+		print "Now we have #{@students.length} student"
+		if @students.length != 1  
+			puts "s."
+		end
+
 		get_information
 	end
 
@@ -60,7 +63,9 @@ def get_information
 	# read in cohort name
 	puts "Please enter cohort name"
 	@cohort = gets.chomp
-
+	if @cohort.empty?
+		@cohort = :May
+	end
 	#return name and cohort
 	@name
 	@cohort
@@ -81,7 +86,11 @@ end
 
 #method to print the footer
 def print_footer
-	puts "Overall, we have #{@students.length} students."
+	print "Overall, we have #{@students.length} student"
+	if @students.length !=1  
+		puts "s." 
+	end
+	
 end
 
 #method to print out the choices
